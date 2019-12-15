@@ -191,7 +191,7 @@ $ kubectl get pods -o wide
 # The service associated with these pods performs load balancing among the different pods
 
 # To autoscale a deployment do the following:
-$ kubectl autoscale deployment hello-node --cpu-percent=<threshold-cpu-usage> --min=<min-num-of-nodes> --max=<max-num-of-nodes>
+$ kubectl autoscale deployment <deployment-name> --cpu-percent=<threshold-cpu-usage> --min=<min-num-of-nodes> --max=<max-num-of-nodes>
 
 # Get details about the Horizontal Pod Autoscaler
 $ kubectl get hpa
@@ -228,9 +228,6 @@ $ kubectl create serviceaccount dashboard -n default
 
 # To add cluster admin roles for roles on dashboard
 $ kubectl create clusterrolebinding dashboard-admin -n default --clusterrole=cluster-admin --serviceaccount=default:dashboard
-
-# 
-$ kubectl get secret $(kubectl get serviceaccount dashboard -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode
 
 $ kubectl -n kube-system edit service kubernetes-dashboard service/kubernetes-dashboard
 # In the editor, change the `type` to NodePort & save 
