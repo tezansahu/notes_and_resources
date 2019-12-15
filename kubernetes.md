@@ -189,6 +189,15 @@ $ kubectl get deployments
 $ kubectl get pods -o wide
 
 # The service associated with these pods performs load balancing among the different pods
+
+# To autoscale a deployment do the following:
+$ kubectl autoscale deployment hello-node --cpu-percent=<threshold-cpu-usage> --min=<min-num-of-nodes> --max=<max-num-of-nodes>
+
+# Get details about the Horizontal Pod Autoscaler
+$ kubectl get hpa
+
+# Remove the autoscaling:
+$ kubectl delete hpa <hpa-name>
 ```
 
 Rolling updates allow Deployments' update to take place with zero downtime by incrementally updating Pods instances with new ones. The new Pods will be scheduled on Nodes with available resources.
@@ -207,4 +216,34 @@ $ kubectl rollout status deployment <deployment-name>
 $ kubectl rollout undo deployment <deployment-name>
 ```
 
+## Dashboard Creation:
 
+On the Master, do the following:
+
+```bash
+$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+
+# To create a service account for the service
+$ kubectl create serviceaccount dashboard -n default
+
+# To add cluster admin roles for roles on dashboard
+$ kubectl create clusterrolebinding dashboard-admin -n default --clusterrole=cluster-admin --serviceaccount=default:dashboard
+
+# 
+$ kubectl get secret $(kubectl get serviceaccount dashboard -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode
+
+$ kubectl -n kube-system edit service kubernetes-dashboard service/kubernetes-dashboard
+# In the editor, change the `type` to NodePort & save 
+
+# Check the dashboard service for exposed port
+$ kubectl -n kube-system get service kubernetes-dashboard
+
+$ kubectl describe serviceaccount kubernetes-dashboard -n kube-system
+# Copy the token token
+
+$  kubectl describe secrets <token> -n kube-system
+# We get one big token which will be used  For logining into dashboard  
+
+# Access the dashboard by typing the following into the browser:
+# https://<master-ip-address>:<exposed-node>
+```
