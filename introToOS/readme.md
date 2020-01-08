@@ -3,18 +3,18 @@
 ## Offered by Georgia Tech on Udacity
 
 
-### Notes:
-- [Introduction to Operating Systems](./ch01.md)
-- [Processes & Process Management](./ch02.md)
-- [Threads & Concurrency](./ch03.md)
-- [Thread Design Considerations](./ch04.md)
-- [Scheduling](./ch05.md)
-- [Memory Management](./ch06.md)
-- [Inter-Process Communication](./ch07.md)
-- [Synchronisation Constructs](./ch08.md)
-- [I/O Management](./ch09.md)
-- [Virtualization](./ch10.md)
-- [Remote Procedure Calls (RPCs)](./ch11.md)
+### Chapterwise Notes:
+1. [Introduction to Operating Systems](./ch01.md)
+2. [Processes & Process Management](./ch02.md)
+3. [Threads & Concurrency](./ch03.md)
+4. [Thread Design Considerations](./ch04.md)
+5. [Scheduling](./ch05.md)
+6. [Memory Management](./ch06.md)
+7. [Inter-Process Communication](./ch07.md)
+8. [Synchronisation Constructs](./ch08.md)
+9. [I/O Management](./ch09.md)
+10. [Virtualization](./ch10.md)
+11. [Remote Procedure Calls (RPCs)](./ch11.md)
 
 ### Reference Research Papers:
 - ["An Introduction to Programming with Threads"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-paper.pdf) by Birrell
