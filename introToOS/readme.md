@@ -11,7 +11,7 @@
 5. [Scheduling](./ch05.md)
 6. [Memory Management](./ch06.md)
 7. [Inter-Process Communication](./ch07.md)
-8. [Synchronisation Constructs](./ch08.md)
+8. [Synchronization Constructs](./ch08.md)
 9. [I/O Management](./ch09.md)
 10. [Virtualization](./ch10.md)
 11. [Remote Procedure Calls (RPCs)](./ch11.md)
