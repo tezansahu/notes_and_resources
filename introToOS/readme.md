@@ -15,6 +15,7 @@
 9. [I/O Management](./ch09.md)
 10. [Virtualization](./ch10.md)
 11. [Remote Procedure Calls (RPCs)](./ch11.md)
+12. [Distributed File Systems](./ch12.md)
 
 ### Reference Research Papers:
 - ["An Introduction to Programming with Threads"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-paper.pdf) by Birrell
@@ -24,6 +25,7 @@
 - ["Chip Multithreading Systems Need a New Operating System Scheduler"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-fedorova-paper.pdf) by Fedorova, Alexandra, et. al.
 - ["Virtual Machine Monitors: Current Technologies and Future Trends"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-rosenblum-garfinkel-paper.pdf) by Rosenblum and Garfinkel
 - ["Implementng Remote Procedure Calls"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-nelson-paper.pdf) by Andrew Birrell and Bruce Nelson
+- ["Caching in the Sprite Network File System"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-nelson-paper.pdf) by Nelson, Michael N., et. al.
 
 ### Reference Books:
 
