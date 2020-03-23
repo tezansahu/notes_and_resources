@@ -18,6 +18,7 @@
 12. [Distributed File Systems](./ch12.md)
 13. [Distributed Shared Memory](./ch13.md)
 14. [Datacenter Technologies](./ch14.md)
+15. [Final Exam Sample Solution](./sample_soln.pdf)
 
 ### Reference Research Papers:
 - ["An Introduction to Programming with Threads"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-paper.pdf) by Birrell
@@ -29,6 +30,7 @@
 - ["Implementng Remote Procedure Calls"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-birrell-nelson-paper.pdf) by Andrew Birrell and Bruce Nelson
 - ["Caching in the Sprite Network File System"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-nelson-paper.pdf) by Nelson, Michael N., et. al.
 - ["Distributed Shared Memory: Concepts & Systems"](https://s3.amazonaws.com/content.udacity-data.com/courses/ud923/references/ud923-protic-paper.pdf)
+- ["Lessons from Giant-Scale Services"](https://people.eecs.berkeley.edu/~brewer/Giant.pdf) by Eric A. Brewer
 
 ### Reference Books:
 
