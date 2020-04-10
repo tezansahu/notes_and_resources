@@ -155,6 +155,22 @@ $ nano hosts
 # Now fill in the details bout targets in this file & save it
 ```
 
+### Dynamic Inventories:
+
+Ansible also supports dynamic inventories (such as those for AWS EC2 instances because hosts may come and go over time, be managed by external applications, or you might even be using AWS autoscaling).
+
+First, we need to configure `boto3` to make API calls to AWS. This can be done by exporting the environmental variables:
+```bash
+$ export AWS_ACCESS_KEY_ID='AK123'
+$ export AWS_SECRET_ACCESS_KEY='abc123'
+```
+
+
+The [`ec2.py` script ](https://github.com/ansible/ansible/blob/devel/test/support/integration/plugins/modules/ec2.py) can be downloaded & used:
+```bash
+$ ansible -i ec2.py 
+```
+
 ## Playbooks
 
 They are [YAML](https://learnxinyminutes.com/docs/yaml/) files where Ansible code is written to tell Ansible what to execute. They form the building blocks of all use-cases of Ansible.
@@ -319,7 +335,7 @@ apache-role/
 ├── README.md
 ├── tasks           # main list of tasks to be executed
 │   └── main.yml
-├── templates       # templates which can be deployed via this role
+├── templates       # Jinja2 templates which can be deployed via this role
 ├── tests
 │   ├── inventory
 │   └── test.yml
@@ -397,3 +413,53 @@ $ cat > apache2-playbook.yml
 # Run the playbook to leverage the role
 $ ansible-playbook apache2-playbook.yml
 ```
+
+## Ansible Facts
+
+Ansible facts are system properties that are collected by Ansible when it executes on a remote system. The facts contain useful details such as storage and network configuration about a target system.
+
+```bash
+# To view all the facts in a remote target
+$ ansible <target-name> -m setup
+
+# To view filtered set of facts
+$ ansible <target-name> -m setup -a "filter=<filter>"
+# Eg: ansible all -m setup -a "filter=*ipv4"
+```
+
+Facts can be set using the `set_fact` module. Within a playbook, it can be done as follows:
+```yaml
+# Example setting host facts using key=value pairs, note that this always creates strings or booleans
+- set_fact: one_fact="something" other_fact="{{ local_var }}"
+```
+
+## Tags
+
+Ansible supports `tags` attribute, which can be added to plays, tasks & roles in order to facilitate the running of only parts of a playbook when necessary.
+
+Tags can be set in 2 ways:
+* ```yaml
+  tags: ["tag1", "tag2"]
+  ```
+* ```yaml
+  tags: 
+    - tag1
+    - tag2
+  ```
+
+```bash
+# Run only parts of a playbook (involving tags "tag1" & "tag2" ot of the many ags set)
+$ ansible-playbook example.yml --tags "tag1,tag2"
+
+# Skip portions of a playbook tagged by say "tag3"
+$ ansible-playbook example.yml --skip-tags "tag3"
+
+# List all tags involved in a playbook
+$ ansible-playbook example.yml --list-tags
+
+# List all tasks tagged by certain tag(s)
+$ ansible-playbook example.yml --tags "tag1,tag2" --list-tasks 
+```
+### Special Tags:
+* `always`: always run a task, unless specifically skipped
+* `never`: prevent a task from running unless a tag is specifically requested.
