@@ -5,6 +5,7 @@ Repository containing notes for some courses, and installation (with use) of som
 ## Tools/Softwares:
 - [Docker](./docker.md)
 - [Kubernetes](./kubernetes.md)
+- [Ansible](./ansible.md)
 
 ## Courses:
 - [Introduction to Operating Systems (by Georgia Tech on Udacity)](./introToOS/readme.md)
