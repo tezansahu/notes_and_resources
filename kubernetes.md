@@ -51,7 +51,7 @@ $ apt-get install openssh-server
 ```
 
 ### Install `docker`:
-Follow the steps mentioned [here](https://drive.google.com/open?id=18TUr_Vc_FDQKhBG-AxIPzHjdBm6x2-88) to install `docker`
+Follow the steps mentioned [here](https://github.com/tezansahu/notes_and_resources/blob/master/docker.md) to install `docker`
 
 ### Install `kubectl`, `kubelet` and `kubeadm`:
 
