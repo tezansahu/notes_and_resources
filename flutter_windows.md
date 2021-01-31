@@ -1,5 +1,7 @@
 # Flutter (for Windows)
 
+Flutter is an open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase.
+
 ## Installation
 
 _These steps are majorly taken from the [official Flutter Docs for Installation](https://flutter.dev/docs/get-started/install/windows) but include other smaller details that may have been glossed over or may cause errors. The installation assumes that you already have __Android Studio__ installed with the SDKs needed for development._
@@ -21,3 +23,28 @@ _These steps are majorly taken from the [official Flutter Docs for Installation]
    > If it shows the error that Flutter & Dart plugins are not installed in Android Studio, head over to Android Studio & go to __File > Settings > Plugins__, search for _Flutter_ & click __Install__. This will automatically install the Dart plugin as well.
    
 5. Run `flutter doctor` again to check the status of installation
+
+## Usage
+
+Following are the major commands used in Flutter CLI
+```bash
+# Create an app
+> flutter create <app_name>
+
+# Get all the packages/dependencies for the project
+> flutter pub get
+
+# Check the Android devices running
+> flutter devices
+
+# Enable the app to run on web
+> flutter channel beta
+> flutter upgrade
+> flutter config --enable-web
+# You need only run the config command once. After you enable web support, every Flutter app you create also compiles for the web.
+
+# Run the app (runs by default in the 'debug' mode)
+> flutter run                   # Once running, press 'r' for Hot Reload
+> flutter run -d <device_name>  # To run on a specific device
+> flutter run --release         # Build & run app in 'release' mode, for deployment
+```
